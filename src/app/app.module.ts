@@ -27,6 +27,8 @@ import { AdminAccessAreaComponent } from './admin-access-area/admin-access-area.
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { ViewRentedVehicleComponent } from './view-rented-vehicle/view-rented-vehicle.component';
 import { MonthlyRevenueComponent } from './monthly-revenue/monthly-revenue.component';
+import { BookingsByVehicleComponent } from './bookings-by-vehicle/bookings-by-vehicle.component';
+import { ViewAllCustomerComponent } from './view-all-customer/view-all-customer.component';
 
 
 
@@ -55,7 +57,9 @@ import { MonthlyRevenueComponent } from './monthly-revenue/monthly-revenue.compo
     AdminAccessAreaComponent,
     PaymentDetailsComponent,
     ViewRentedVehicleComponent,
-    MonthlyRevenueComponent
+    MonthlyRevenueComponent,
+    BookingsByVehicleComponent,
+    ViewAllCustomerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<div class="text-center">
+
+  <!-- private int customerId;
+private String firstName;
+private String lastName;
+private String emailId;
+private String mobileNumber;
+private String address; -->
+<!--<button (click)="viewAllCustomer()">
+  viewAllCustomer
+</button>-->
+<h1>list of customers</h1>
+  <table class="table table-bordered table-striped">
+      <thead class="thead">
+         <tr>
+          <th>customer Id</th>
+          <th>first Name</th>
+          <th>last Name</th>
+          <th>emailId</th>
+          <th>mobile Number</th>
+          <th>address</th>
+         </tr>
+      </thead>
+      <tbody class="tbody">
+          <tr *ngFor="let c of CustomerList">
+              <td class="text-center">{{c.customerId}}</td>
+              <td class="text-center">{{c.firstName}}</td>
+              <td class="text-center">{{c.lastName}}</td>
+              <td class="text-center">{{c.emailId}}</td>
+              <td class="text-center">{{c.mobileNumber}}</td>
+              <td class="text-center">{{c.address}}</td>
+          </tr>
+      </tbody>
+  </table>
+  <button class="btn btn-success" (click)="goBack()">Go Back</button>
+</div>

@@ -50,5 +50,12 @@ export class AdminServiceService {
   updatePaymentStatus(payment : Payment,status : string){
     return this.httpClient.put(this.url+`/update/payment/${status}`,payment)
   }
+
+  viewBookingByVehicle(type : string) {
+    return this.httpClient.get<Booking[]>(this.url+`/viewByVehicle/booking/${type}`);
+  }
+  viewAllCustomer(){
+    return this.httpClient.get(this.url+`/viewAll/Customer`);
+  }
   
 }

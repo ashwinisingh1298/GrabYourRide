@@ -5,6 +5,7 @@ import { AcceptorRejectBookingComponent } from './acceptor-reject-booking/accept
 import { AddVehicleCompComponent } from './add-vehicle-comp/add-vehicle-comp.component';
 import { AdminAccessAreaComponent } from './admin-access-area/admin-access-area.component';
 import { AfterPaymentComponent } from './after-payment/after-payment.component';
+import { BookingsByVehicleComponent } from './bookings-by-vehicle/bookings-by-vehicle.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { TermsComponent } from './terms/terms.component';
 import { UpdateBookingComponent } from './update-booking/update-booking.component';
 import { UserAreaComponent } from './user-area/user-area.component';
+import { ViewAllCustomerComponent } from './view-all-customer/view-all-customer.component';
 import { ViewBookingComponent } from './view-booking/view-booking.component';
 import { ViewRentedVehicleComponent } from './view-rented-vehicle/view-rented-vehicle.component';
 
@@ -45,6 +47,8 @@ const routes: Routes = [
   {path:'approvalPage',component:AcceptorRejectBookingComponent},
   {path:'viewAllPayments',component:PaymentDetailsComponent},
   {path:'monthlyRevenue',component:MonthlyRevenueComponent},
+  {path:'viewAllCustomer',component:ViewAllCustomerComponent},
+  {path:'viewBookingByVehicle',component:BookingsByVehicleComponent},
   {path:'',redirectTo:'loginPage',pathMatch:'full'}
 ];
 

@@ -50,5 +50,11 @@ export class AdminAccessAreaComponent implements OnInit {
   monthly(){
     this.router.navigate(['monthlyRevenue']);
   }
+  viewCustomers(){
+    this.router.navigate(['viewAllCustomer']);
+  }
+  viewBookingByVehicle(){
+    this.router.navigate(['viewBookingByVehicle']);
+  }
   
 }

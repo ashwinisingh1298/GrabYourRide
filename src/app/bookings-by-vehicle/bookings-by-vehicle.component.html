@@ -1,0 +1,49 @@
+<div class="text-center">
+  <h2>Bookings by {{type}}</h2><br><br>
+  <div style="margin-left: 40%;">
+  <td>Vehicle : </td>
+  <td>
+    
+    <label for="description"></label>
+    <select name="description" id="description" [(ngModel)]="type" (click)="viewBookingByVehicle()" style="background-color: rgb(13 110 253 / 25%); font-weight: bolder;">
+      <option value="Innova Crysta">Innova Crysta</option>
+      <option value="Honda City">Honda City</option>
+      <option value="Volvo">Volvo</option>
+      <option value="Yamaha R15">Bike</option>
+      <option value="Activa">Scooty</option>
+      <option value="Mercedes Maybach">Mercedes Maybach</option>
+    </select>
+  </td>
+</div>
+  <br><br><br><br>
+  
+</div>
+<br>
+<br>
+<div class="text-center">
+
+  <!-- <h1>Bookings by {{type}}</h1> -->
+  <table class="table table-bordered table-striped">
+    <thead class="thead">
+      <tr>
+        <th>Booking Id</th>
+        <th>Booking Date</th>
+        <th>Drop Off Date</th>
+        <th>Amount Paid</th>
+        <th>Vehicle Booked</th>
+        <th>Booking Status</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let b of bookingList">
+        <td class="text-center">{{b.bookingId}}</td>
+        <td class="text-center">{{b.bookingDate}}</td>
+        <td class="text-center">{{b.bookedTillDate}}</td>
+        <td class="text-center">{{b.totalCost}}</td>
+        <td class="text-center">{{b.vehicle.type}}</td>
+        <td class="text-center">{{b.bookingStatus}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success" (click)="goBack()">Go Back</button>
+</div>
