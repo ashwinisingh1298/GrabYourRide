@@ -40,7 +40,9 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['adminArea']);
         }
       })
-    },error=>alert("wrong Id password"));
+    },error=>{
+      this.message="Wrong Email Id/Password!";
+    });
     
   }
 
@@ -62,6 +64,7 @@ export class LoginComponent implements OnInit {
        }
      },
      (err)=>{
+      this.message="Invalid Email Id!";
       console.log(err);
      }
     );
