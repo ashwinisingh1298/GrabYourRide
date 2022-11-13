@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
 
     )
     UserData.userId=this.customer.emailId;
-    this.router.navigate(['userArea',this.email]);
+    this.router.navigate(['home']);
 
   }
 

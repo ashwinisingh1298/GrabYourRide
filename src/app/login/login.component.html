@@ -31,9 +31,14 @@
     <div class = "valid-feedback"> </div>  
     <div class = "invalid-feedback"></div>  
     </div>  
-    <button type = "submit" class = "btn btn-info mt-2" (click)="onSubmit()"> Submit </button>  
+    <button type = "submit" class = "btn btn-info mt-2" (click)="onSubmit()"> Submit </button><br><br> 
+    <button class="btn btn-success" (click)="forgotPassword()">Forgot Password</button> 
     </form>  
-    </div>  
+       
+    </div> 
+    <div class="text-center">
+        <p style="color:red;">{{message}}</p>
+    </div> 
     </body>  
     </html>  
 <body>

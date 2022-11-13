@@ -39,4 +39,7 @@ export class UserAreaComponent implements OnInit {
   {
     this.router.navigate(['viewBooking']);
   }
+  public home(){
+    this.router.navigate(['home']);
+  }
 }

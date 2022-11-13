@@ -50,7 +50,7 @@
           </button>
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigate</h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -65,7 +65,7 @@
                       <button (click)="Feedback()" class="btn btn-light">Feedback</button><br><br>
                   </li>
                   <li class="nav-item">
-                      <tr><button class="btn btn-light">Sign Out</button><br><br>
+                      <tr><button class="btn btn-light" (click)="home()">Sign Out</button><br><br>
                   </li>
               </ul>
             </div>

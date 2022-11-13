@@ -11,7 +11,7 @@ import { UserData } from '../UserData/userData';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  message:string="";
   public user:User=new User();
   public userspr:User=new UserSpring();
 
@@ -48,5 +48,23 @@ export class LoginComponent implements OnInit {
     console.log("Login");
     this.router.navigate(['register']);
   }
+
+  public forgotPassword(){
+    this.loginService.getPassword(this.user.userId).subscribe(
+     (resp)=>{
+       if(resp!=null){
+         console.log(resp.password);
+         this.message="Your Password has been sent to your registered mail id.";
+       }
+       else{
+         console.log("Invalid Username");
+         this.message="Invalid Email Id!";
+       }
+     },
+     (err)=>{
+      console.log(err);
+     }
+    );
+   }
   
 }
