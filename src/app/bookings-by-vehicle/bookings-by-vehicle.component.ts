@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router } from '@angular/router';
 import { AdminServiceService } from '../service/admin-service.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AdminServiceService } from '../service/admin-service.service';
 })
 export class BookingsByVehicleComponent implements OnInit {
 
-  constructor(private adminService : AdminServiceService) { }
+  constructor(private adminService : AdminServiceService,private router:Router) { }
   type : string="Innova Crysta";
   bookingList =null;
   ngOnInit() {
@@ -31,5 +32,8 @@ export class BookingsByVehicleComponent implements OnInit {
       }
     }
     )
+  }
+  goBack(){
+    this.router.navigate(['adminArea']);
   }
 }

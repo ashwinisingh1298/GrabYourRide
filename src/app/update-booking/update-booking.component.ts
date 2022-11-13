@@ -21,16 +21,19 @@ export class UpdateBookingComponent implements OnInit {
   ngOnInit(): void {
     this.bookingId= Number.parseInt(this.actRoute.snapshot.paramMap.get('bookingId'));
     console.log(this.bookingId);
-    this.adminService.viewBookingById(this.booking.bookingId).subscribe(data=>{
+    this.adminService.viewBookingById(this.bookingId).subscribe(data=>{
+      console.log(data);
       this.booking=data;
+      this.booking.bookingId=this.bookingId;
     })
   }
 
   onSubmit(){
-      this.adminService.doUpdate(this.booking.bookingId,this.booking).subscribe(data=>{
+      this.adminService.doUpdate(this.booking.bookingId,this.booking).subscribe(
+        (data)=>{
       console.log(data);
       this.status="Updated Successfully";
-      this.router.navigate(['BookingPage']);
+      this.router.navigate(['adminBooking']);
     })
   }
 
