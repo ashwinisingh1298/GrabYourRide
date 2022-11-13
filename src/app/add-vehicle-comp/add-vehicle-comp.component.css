@@ -1,0 +1,17 @@
+.container{
+    padding: 3%;
+    width: 50%;
+    color: black;
+    background-color: gray;
+}
+
+.navbar{
+    background-color: gray;
+}
+table{
+    width: 50%;
+    margin: auto;
+}
+.buttondiv{
+    margin-left: 25%;
+}

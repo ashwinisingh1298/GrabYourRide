@@ -1,0 +1,26 @@
+
+
+<div class="text-center">
+<h1>Revenue By Date</h1>
+<table class="table table-bordered" style="width:50%;margin: auto;">
+  <tr>
+    <td>From</td>
+    <td><input class="input" type="date" [(ngModel)]="date1"></td>
+  </tr>
+  <tr>
+    <td>To</td>
+    <td><input type="date" [(ngModel)]="date2"></td>
+  </tr>
+  <tr>
+    <td>
+      <h5>The Revenue for the selected dates is</h5><br>
+    </td>
+    <td>
+      <h2>₹{{revenue}}</h2>
+    </td>
+  </tr>
+</table>
+<button class="btn btn-dark" (click)="getRevenue()">calculate revenue</button>
+<br><br>
+<button class="btn btn-success" (click)="back()">Go Back</button>
+</div>

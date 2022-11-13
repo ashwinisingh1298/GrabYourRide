@@ -1,0 +1,25 @@
+
+<div class="text-center"><h3>All Payments</h3></div>
+<table class="table table-bordered table-striped">
+    <thead class="thead">
+       <tr>
+        <th>Payment Id</th>
+        <th>Payment Mode</th>
+        <th>Date</th>
+        <th>Update Status</th>
+        <th>Status</th>
+       </tr>
+    </thead>
+    <tbody class="tbody">
+        <tr *ngFor="let p of payment">
+            <td class="text-center">{{p.paymentId}}</td>
+            <td class="text-center">{{p.paymentMode}}</td>
+            <td class="text-center">{{p.paymentDate}}</td>
+            <td class="text-center"><button class="btn btn-success" (click)="paymentStatus(p,'Successful')"><i class="fa-solid fa-check"></i></button><button (click)="paymentStatus(p,'Failed')" class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button></td>
+            <td class="text-center">{{p.paymentStatus}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="goBack()" class="btn btn-success">Go Back</button>
+
+

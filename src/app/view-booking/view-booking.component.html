@@ -1,0 +1,42 @@
+<div class="text-center">
+    <!-- //Booking Id
+    //Booking Date
+    //bookedTillDate
+    //TotalCost
+    //Vehicle Type
+    //bookingStatus -->
+<h1>Previous Bookings</h1>
+    <table class="table table-bordered table-striped">
+        <thead class="thead">
+           <tr>
+            <th>Booking Id</th>
+            <th>Booking Date</th>
+            <th>Drop Off Date</th>
+            <th>Amount Paid</th>
+            <th>Vehicle Booked</th>
+            <th>Booking Status</th>
+           </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr *ngFor="let b of bookingList">
+                <td class="text-center">{{b.bookingId}}</td>
+                <td class="text-center">{{b.bookingDate}}</td>
+                <td class="text-center">{{b.bookedTillDate}}</td>
+                <td class="text-center">{{b.totalCost}}</td>
+                <td class="text-center">{{b.vehicle.type}}</td>
+                <td class="text-center">{{b.bookingStatus}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success" (click)="goBack()">Go Back</button>
+</div>
+
+<!-- <tbody class="tbody">
+    <tr *ngFor="let d of ProductList">
+      <td class="text-center">{{d.product_id}}</td>
+      <td class="text-center">{{d.product_name}}</td>
+      <td class="text-center">{{d.product_price}}</td>
+      <td class="text-center"><button class="btn btn-primary" (click)="Update(d.product_id)">Edit</button></td>
+      <td class="text-center"><button class="btn btn-danger" (click)="delete(d.product_id)">Delete</button></td>
+    </tr>
+  </tbody> -->

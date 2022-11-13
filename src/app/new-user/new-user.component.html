@@ -1,0 +1,23 @@
+<div class="text-center">
+  <table class=" table table-striped">
+    <thead>
+      <th>Enter the Details</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>User Email</td>
+        <td><input type="email" name="" id="" [(ngModel)]="user.userId"></td>
+      </tr>
+      <tr>
+        <td>User Password</td>
+        <td><input type="password" name="" id="" [(ngModel)]="user.password"></td>
+      </tr>
+      <tr>
+        <td>Confirm Password</td>
+        <td><input type="text"></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <button (click)="customerRegistration()" class="btn btn-dark">Sign Up</button>
+</div>

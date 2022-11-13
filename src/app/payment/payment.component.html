@@ -1,0 +1,142 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Choose your Payment Method</h1>
+  <br>
+  <div class="card mt-5" style="padding:20px">
+    <table class="table" >
+      <thead>
+        <tr>
+          <th scope="col" style="text-align:center" colspan="2">Payment Methods</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">UPI</th>
+          <td><button type="button"  class="btn btn-primary" name="Choose" data-bs-toggle="modal" data-bs-target="#exampleModal1">Choose</button></td>
+        </tr>
+        <tr>
+          <th scope="row">Debit Card</th>
+          <td><button type="button"  class="btn btn-primary" name="Choose" data-bs-toggle="modal" data-bs-target="#exampleModal2">Choose</button></td>
+        </tr>
+        <tr>
+          <th scope="row">Credit Card</th>
+          <td><button type="button"  class="btn btn-primary" name="Choose" data-bs-toggle="modal" data-bs-target="#exampleModal3">Choose</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  <!-- Modal for UPI -->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter UPI Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body" [class.has-error]="upi.invalid && upi.touched">
+        <input id="upi" placeholder="Enter unique UPI id" required pattern="[1-9]{1}[0-9]{9}" type="number" class="form-control" name="upi" [(ngModel)]="upiid" #upi="ngModel">
+        <span class="close" class="help-block" *ngIf="upi.errors?.required && upi.touched">
+          UPI Number is required
+        </span>
+        <span class="close" class="help-block" *ngIf="upi.errors?.pattern && upi.touched">upi Number is Invalid</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="selectMode('UPI')" data-bs-dismiss="modal">Confirm Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Debit Card -->
+<div class="modal" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Debit Card Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3" [class.has-error]="cn.invalid && cn.touched">
+          <label for="exampleFormControlInput1" class="form-label">Card Number</label>
+          <input id="exampleFormControlInput1" placeholder="XXXX-XXXX-XXXX-XXXX" required pattern="[1-9]{1}[0-9]{15}" type="number" class="form-control" name="cn" [(ngModel)]="cardnum" #cn="ngModel">
+            <span class="help-block" *ngIf="cn.errors?.required && cn.touched">
+              Card Number is required
+            </span>
+            <span class="help-block" *ngIf="cn.errors?.pattern && cn.touched">Card Number is Invalid</span>
+        </div>
+
+        <div class="mb-3" [class.has-error]="cvv.invalid && cvv.touched">
+          <label for="exampleFormControlInput1" class="form-label">CVV</label>
+          <input type="number" id="exampleFormControlInput2" placeholder="CVV" required pattern="[1-9]{1}[0-9]{2}" class="form-control" name="cvv" [(ngModel)]="CVV" #cvv="ngModel">
+          <span class="help-block" *ngIf="cvv.errors?.required && cvv.touched">
+            CVV is required
+          </span>
+          <span class="help-block" *ngIf="cvv.errors?.pattern && cvv.touched">Cvv is Invalid</span>
+        </div>
+
+        <div class="mb-3" [class.has-error]="expdate.invalid && expdate.touched">
+          <label for="exampleFormControlInput1" class="form-label">Expiry Date</label>
+          <input type="text" id="exampleFormControlInput3" placeholder="mm-yy" required pattern="[0-9]{2}[-]{1}[0-9]{2}" class="form-control" name="expdate" [(ngModel)]="Expdate" #expdate="ngModel">
+          <span class="help-block" *ngIf="expdate.errors?.required && expdate.touched">
+            Expiry date is required
+          </span>
+          <span class="help-block" *ngIf="expdate.errors?.pattern && expdate.touched">Expiry date is Invalid</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="selectMode('Debit Card')" data-bs-dismiss="modal">Confirm Payment</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Credit Card -->
+<div class="modal" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enter Credit Card Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3" [class.has-error]="cn.invalid && cn.touched">
+          <label for="exampleFormControlInput1" class="form-label">Card Number</label>
+          <input id="exampleFormControlInput1" placeholder="XXXX-XXXX-XXXX-XXXX" required pattern="[1-9]{1}[0-9]{15}" type="number" class="form-control" name="cn" [(ngModel)]="cardnum" #cn="ngModel">
+            <span class="help-block" *ngIf="cn.errors?.required && cn.touched">
+              Card Number is required
+            </span>
+            <span class="help-block" *ngIf="cn.errors?.pattern && cn.touched">Card Number is Invalid</span>
+        </div>
+
+        <div class="mb-3" [class.has-error]="cvv.invalid && cvv.touched">
+          <label for="exampleFormControlInput1" class="form-label">CVV</label>
+          <input type="number" id="exampleFormControlInput2" placeholder="CVV" required pattern="[1-9]{1}[0-9]{2}" class="form-control" name="cvv" [(ngModel)]="CVV" #cvv="ngModel">
+          <span class="help-block" *ngIf="cvv.errors?.required && cvv.touched">
+            CVV is required
+          </span>
+          <span class="help-block" *ngIf="cvv.errors?.pattern && cvv.touched">Cvv is Invalid</span>
+        </div>
+
+        <div class="mb-3" [class.has-error]="expdate.invalid && expdate.touched">
+          <label for="exampleFormControlInput1" class="form-label">Expiry Date</label>
+          <input type="text" id="exampleFormControlInput3" placeholder="mm-yy" required pattern="[0-9]{2}[-]{1}[0-9]{2}" class="form-control" name="expdate" [(ngModel)]="Expdate" #expdate="ngModel">
+          <span class="help-block" *ngIf="expdate.errors?.required && expdate.touched">
+            Expiry date is required
+          </span>
+          <span class="help-block" *ngIf="expdate.errors?.pattern && expdate.touched">Expiry date is Invalid</span>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="selectMode('Credit Card')" data-bs-dismiss="modal">Confirm Payment</button>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+<div><h2>Total Amount:</h2>
+<h3>{{amount}}</h3></div>

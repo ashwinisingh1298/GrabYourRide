@@ -1,0 +1,33 @@
+<h3>Rented Vehicle List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>vehicle Number</th>
+            <th>Booking Date</th>
+            <th>Booked Till</th>
+            <th>Booking Status</th>
+            <th>Booking Description</th>
+            <th>Booking Total Cost</th>
+            <th>Booking Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let booked of book">
+            <!-- <td>{{booked.bookingId}}</td> -->
+            <!-- <td>{{booked.customer}}</td> -->
+            <td>{{booked.vehicle.vehicleNumber}}</td>
+            <td>{{booked.bookingDate}}</td>
+            <td>{{booked.bookedTillDate}}</td>
+            <td>{{booked.bookingStatus}}</td>
+            <td>{{booked.bookingDescription}}</td>
+            <td>{{booked.totalCost}}</td>
+            <td>{{booked.distance}}</td>
+            <!-- <td>
+                <button (click)="updateStudent(mbbsstudents.studentId)" class="bold">Update</button>
+                <button (click)="deleteStudents(mbbsstudents.studentId)" class="bold">Delete</button>
+            </td> -->
+       </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-success" (click)="goBack()">Go Back</button>

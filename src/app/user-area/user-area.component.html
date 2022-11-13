@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <style>
+        body{
+            /* background-color: #8D9EFF; */
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-success">
+    
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Grab Your Ride</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <button class="btn btn-light" (click)="viewBooking()">View Bookings</button><br><br>
+                  </li>
+                  <li class="nav-item">
+                      <button (click)="Feedback()" class="btn btn-light">Feedback</button><br><br>
+                  </li>
+                  <li class="nav-item">
+                      <tr><button class="btn btn-light">Sign Out</button><br><br>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br><br><br>
+    <div class="text-center">
+        <h2 class="w3-bar-item">Hello {{customerName}}!</h2><br>
+    </div>
+
+<br><br>
+    <div name="vehiclecards" class="text-center">
+
+
+        <button class="btn btn-dark" data-bs-toggle="collapse" href="#vehicleSelect" role="button"
+            aria-expanded="false" aria-controls="multiCollapseExample1">Create
+            Booking</button><br><br>
+        <div class="collapse" id="vehicleSelect">
+            <section name="vehicleSelection" id="vehicleSelect1">
+                <div>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#carSection" role="button"
+                                aria-expanded="false" aria-controls="multiCollapseExample1"><img
+                                    src="https://cdn-icons-png.flaticon.com/512/3085/3085411.png" style="width:20%"
+                                    alt=""></a><br>
+                            <div>
+                                <div class="collapse multi-collapse" id="carSection">
+                                    <div class="card card-body">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Honda-City%20(5th%20gen)-210720201331.jpg&w=373&h=245&q=75&c=1"
+                                                style="width:90%" class="card-img-top" alt="Honda City">
+                                            <div class="card-body">
+                                                <h2 class="card-title "><b>Honda City</b></h2>
+                                                <h4 class="card-title">Sedan</h4>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Fixed Charges/day : ₹1500</li>
+                                                <li class="list-group-item">Price/Km : ₹14</li>
+                                                <li class="list-group-item">Capacity : 3 people</li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <button class="btn btn-dark"
+                                                    (click)="booking(14,1500,'Honda City')">Proceed</button>
+                                            </div>
+                                        </div>
+
+
+                                        <br>
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/Galleries/20201015102234_2021-Toyota-Innova-Crysta-facelift-sliver-studio.jpg&w=373&h=245&q=75&c=1"
+                                                style="width:90%" class="card-img-top" alt="Honda City">
+                                            <div class="card-body">
+                                                <h2 class="card-title "><b>Innova Crysta</b></h2>
+                                                <h4 class="card-title">SUV</h4>
+
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Fixed Charges/day : ₹2500</li>
+                                                <li class="list-group-item">Price/Km : ₹17</li>
+                                                <li class="list-group-item">Capacity : 6 people</li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <button class="btn btn-dark"
+                                                    (click)="booking(17,2500,'Innova Crysta')">Proceed</button>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="https://imgd.aeplcdn.com/1056x594/n/kp75d3a_1570305.jpg?q=75&wm=1"
+                                                style="width:120%" class="card-img-top" alt="Honda City">
+                                            <div class="card-body">
+                                                <h2 class="card-title "><b>Mercedes Maybach</b></h2>
+                                                <h4 class="card-title">Luxury Sedan</h4>
+
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">Fixed Charges/day : ₹5000</li>
+                                                <li class="list-group-item">Price/Km : ₹50</li>
+                                                <li class="list-group-item">Capacity : 3 people</li>
+                                            </ul>
+                                            <div class="card-body">
+                                                <button class="btn btn-dark"
+                                                    (click)="booking(50,5000,'Mercedes Maybach')">Proceed</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#bikeSection" aria-expanded="false"
+                                aria-controls="multiCollapseExample2"><img
+                                    src="https://cdn-icons-png.flaticon.com/512/1168/1168000.png" style="width:20% ;"
+                                    alt=""></button><br>
+                            <div class="collapse multi-collapse" id="bikeSection">
+                                <div class="card card-body">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="https://bd.gaadicdn.com/processedimages/honda/activa-6g/640X309/activa-6g6250043875d0f.jpg?tr=w-290,h-205"
+                                            style="width:100%" class="card-img-top" alt="Honda City">
+                                        <div class="card-body">
+                                            <h2 class="card-title "><b>Activa</b></h2>
+                                            <h4 class="card-title">Scooty</h4>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Fixed Charges/day : ₹500</li>
+                                            <li class="list-group-item">Price/Km : ₹8</li>
+                                            <li class="list-group-item">Capacity : 1 people</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="btn btn-dark"
+                                                (click)="booking(8,500,'Activa')">Proceed</button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="https://5.imimg.com/data5/QQ/JC/FY/SELLER-45461290/yamaha-yzf-r15-v-3-0-bike-500x500.jpg"
+                                            style="width:100%" class="card-img-top" alt="Honda City">
+                                        <div class="card-body">
+                                            <h2 class="card-title "><b>Yamaha R15</b></h2>
+                                            <h4 class="card-title">Bike</h4>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Fixed Charges/day : ₹800</li>
+                                            <li class="list-group-item">Price/Km : ₹10</li>
+                                            <li class="list-group-item">Capacity : 1 people</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="btn btn-dark"
+                                                (click)="booking(10,800,'Yamaha R15')">Proceed</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#busSection" aria-expanded="false"
+                                aria-controls="multiCollapseExample2"><img
+                                    src="https://cdn-icons-png.flaticon.com/512/543/543885.png" style="width:20%"
+                                    alt=""></button>
+                            <div class="collapse multi-collapse" id="busSection">
+                                <div class="card card-body">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="data:image/jpeg;base64,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"
+                                            style="width:100%" class="card-img-top" alt="Honda City">
+                                        <div class="card-body">
+                                            <h2 class="card-title "><b>Volvo </b></h2>
+                                            <h4 class="card-title">Bus</h4>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Fixed Charges/day : ₹5000</li>
+                                            <li class="list-group-item">Price/Km : ₹50</li>
+                                            <li class="list-group-item">Capacity : 25 people</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="btn btn-dark"
+                                                (click)="booking(50,5000,'Volvo')">Proceed</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                </section> 
+        </div> 
+    </div>
+    
+
+
+</body>
+
+</html>

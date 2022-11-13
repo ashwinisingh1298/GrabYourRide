@@ -1,0 +1,129 @@
+<!-- <!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Hello {{name}}</h3>
+  <button  class="w3-bar-item w3-button" routerLink="/addVehicle">Add Vehicle</button>
+
+  <button  class="w3-bar-item w3-button" (click)="viewApprovalPage()">View All Bookings</button>
+  <button  class="w3-bar-item w3-button" (click)="viewRented()">View Rented Vehicles</button>
+  <button  class="w3-bar-item w3-button" (click)="viewAllPayments()">Payment Details</button>
+  <button  class="w3-bar-item w3-button" (click)="back()">Log Out</button>
+  
+
+</div>
+
+<div style="margin-left:25%">
+
+<div class="w3-container w3-grey">
+  <h1>Add Vehicle</h1>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html> -->
+
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color:aliceblue">Grab Your Ride</a>
+        <form class="d-flex" role="search">
+
+          <button class="btn btn-outline-light" type="submit" (click)="back()">Sign Out</button>
+        </form>
+      </div>
+    </nav>
+  </div>
+
+  <div class="title-image">
+    <img style="width:105%; height:30rem;" src="https://i.pinimg.com/736x/88/38/42/883842bba5d873f6bbbb077c87195349.jpg"
+      alt="">
+  </div>
+  <div class="title-class">Administrator Console</div>
+
+  <div class="text-center">
+    <br>
+    <h1>Welcome Admin</h1>
+  </div>
+
+  <div class="text-center row" style="margin:3% ;">
+
+    <div class="card col-3 ms-5" style="margin:3% ;">
+      <h5 class="card-header">Bookings</h5>
+      <div class="card-body">
+        <h5 class="card-title">View all the bookings</h5>
+        <p class="card-text">View,Update and change booking status</p>
+        <a (click)="viewApprovalPage()" class="btn btn-dark">View</a>
+      </div>
+    </div>
+    <br>
+    <div class="card col-3 ms-5" style="margin:3% ;">
+      <h5 class="card-header">View Vehicles</h5>
+      <div class="card-body">
+        <h5 class="card-title">All the Rented Vehicles</h5>
+        <p class="card-text">View information about all the rented vehicles</p>
+        <a (click)="viewRented()" class="btn btn-dark">View</a>
+      </div>
+    </div>
+    <br>
+    <div class="card col-3 ms-5" style="margin:3% ;">
+      <h5 class="card-header">Payments</h5>
+      <div class="card-body">
+        <h5 class="card-title">View all payment related information</h5>
+        <p class="card-text">View,Update all the transactions on the website.</p>
+        <a (click)="viewAllPayments()" class="btn btn-dark">View</a>
+      </div>
+    </div>
+
+    <br>
+    <div class="card col-3 ms-5" style="margin:3% ;">
+      <h5 class="card-header">Add Vehicle</h5>
+      <div class="card-body">
+        <h5 class="card-title">Add a Vehicle</h5>
+        <p class="card-text">Register a new vehicle on the database</p>
+        <a routerLink="/addVehicle" class="btn btn-dark">Add</a>
+      </div><br>
+    </div>
+    <div class=" col-4 cardbody text-center">
+      <div class="card class=text-center">
+        <h3 class="card-header">Total Revenue</h3>
+        <div class="card-body">
+          <h2 class="card-text">₹{{totalRevenue}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="card col-3 ms-5" style="margin:3% ;">
+      <h5 class="card-header">Revenue</h5>
+      <div class="card-body">
+        <h5 class="card-title">View Periodic Revenue</h5>
+        <p class="card-text">View Revenue on the basis of dates</p>
+        <a (click)="monthly()" class="btn btn-dark">Add</a>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+</body>
+
+</html>

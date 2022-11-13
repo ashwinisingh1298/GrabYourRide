@@ -1,0 +1,175 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<!-- <nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Grab Your Ride</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Index</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item ">
+            <button class="btn" (click)="aboutUs()">About Us</button>
+          </li>
+          <li class="nav-item ">
+            <button class="btn" (click)="contactUs()">Contact Us</button>
+          </li>
+          <li class="nav-item ">
+            <button class="btn" (click)="terms()">Terms and Conditions</button>
+          </li>
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav> -->
+
+<body>
+
+  <section id="title">
+
+    <!-- Nav Bar -->
+    <div class="container-fluid">
+
+
+      <nav class="navbar  navbar-expand-lg navbar-dark ">
+        <a class="navbar-brand" >Grab Your Ride</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['home']">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="aboutUs()">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="contactUs()">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="terms()">Terms of Use</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+
+
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="title">Book a Ride and Go On a Trip Today!</h1>
+          <button type="button"  (click)="login()" class="btn btn-dark btn-lg download-button"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+          <button type="button" (click)="register()" class="btn btn-outline-light btn-lg download-button"><i class="fa-solid fa-user-plus"></i>Sign Up</button>
+        </div>
+        <div class="iphone-div col-lg-6">
+          <img class=" iphone" src="https://www.fabhotels.com/blog/wp-content/uploads/2020/05/road-trip-hacks-tips-600.jpg" alt="iphone-mockup">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="features">
+    <!-- Features -->
+    <div class="row">
+      <div class="col-lg-4 home-feature">
+        <div class="feature-icon">
+          <i class="fa-sharp fa-solid fa-circle-check fa-5x feature-icon-hover"></i>
+        </div>
+        <h3>Easy to use.</h3>
+        <p>Simple yet Powerful</p>
+      </div>
+      <div class="col-lg-4 home-feature">
+        <div class="feature-icon">
+          <i class="fa-solid fa-bullseye fa-5x feature-icon-hover"></i>
+        </div>
+        <h3>Perfect For Every Budget</h3>
+        <p>From Scooter to Bus,We have it all!</p>
+      </div>
+      <div class="col-lg-4 home-feature ">
+        <div class="feature-icon">
+          <i class="fa-solid fa-heart fa-5x feature-icon-hover"></i>
+        </div>
+        <h3>Well Trained Drivers</h3>
+        <p>Drivers with 10+ years of experience</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">Was Doubtful at first due to the cheap price,but everything was just Perfect!</h2>
+          <em>Raj Singh, Delhi</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Unbelievable prices and amazing drivers, Would definitely recommend!</h2>
+          <em>Sara,Noida</em>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+
+
+
+  </section>
+
+
+  <!-- Press -->
+
+  <section id="press">
+    <img class="press-icon" src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="tc-logo">
+    <img class="press-icon" src="https://cdn-icons-png.flaticon.com/512/1535/1535791.png" alt="tnw-logo">
+    <img class="press-icon" src="https://cdn-icons-png.flaticon.com/512/810/810072.png" alt="biz-insider-logo">
+    <img class="press-icon" src="https://cdn-icons-png.flaticon.com/512/2554/2554922.png" alt="mashable-logo">
+
+  </section>
+
+
+  <!-- Pricing -->
+
+
+<footer id="footer">
+
+    <p>© Copyright GrabYourRide</p>
+
+  </footer>
+
+
+</body>
+  
+ 
+
