@@ -1,4 +1,4 @@
-<div class="text-center">
+<!-- <div class="text-center">
   <table class=" table table-striped">
     <thead>
       <th>Enter the Details</th>
@@ -20,4 +20,44 @@
     </tbody>
   </table>
   <button (click)="customerRegistration()" class="btn btn-dark">Sign Up</button>
+</div> -->
+<div class="text-center" style="width:20% ;margin:auto;">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <th>Enter the Details</th>
+    </thead>
+    <tbody>
+      <tr>
+        <div class="form-group text-center" [class.has-error]="email.invalid && email.touched">
+          <td><label for="email" class="control-label">User Email</label></td><br>
+          <td><input id="email" required pattern="^[A-Za-z]+[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?[A-Za-z]+\.com$" type="text" class="form-control" name="email" [(ngModel)]="user.userId" #email="ngModel"><span class="help-block" *ngIf="email.errors?.required && email.touched" style="color:red;">Email is required</span><span class="help-block" *ngIf="email.errors?.pattern && email.touched"style="color:red;">Email is Invalid</span></td>
+          
+          
+        </div>
+        <!--<td>User Email</td>-  "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+        <td><input type="email" name="" id="" [(ngModel)]="user.userId" required ng-pattern="/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/" /></td>-->
+      </tr>
+      <tr>
+        <div class="form-group" [class.has-error]="password.invalid && password.touched">
+          <td><label for="password" class="control-label">User Password</label></td><br>
+          <td><input id="password" required pattern="^(?=.*[0-9])+(?=.*[a-zA-Z])+(?=.*[@#$%^&-+=()]).{8,}$" type="password" class="form-control" name="password" [(ngModel)]="user.password" #password="ngModel"> <span class="help-block" *ngIf="password.errors?.required && password.touched" style="color:red;">`Enter required password with min 8 char and a special character</span><span class="help-block" *ngIf="password.errors?.pattern && password.touched" style="color:red;">Enter valid password</span></td>
+         
+          
+        </div>
+        <!--<td>User Password</td>
+        <td><input type="password" name="" id="" [(ngModel)]="user.password"></td>-->
+      </tr>
+      <tr>
+        <div class="form-group" [class.has-error]="Confirmpassword.invalid && Confirmpassword.touched">
+          <td><label for="Confirmpassword" class="control-label">Confirm Password</label></td><br>
+          <td><input id="Confirmpassword" required pattern="^(?=.*[0-9])+(?=.*[a-zA-Z])+(?=.*[@#$%^&-+=()]).{8,}$" type="password" class="form-control" name="Confirmpassword" [(ngModel)]="user.Confirmpassword" #Confirmpassword="ngModel"> <span class="help-block" *ngIf="Confirmpassword.errors?.required && Confirmpassword.touched"style="color:red;">Confirm password is required</span> <span class="help-block" *ngIf="Confirmpassword.errors?.pattern && Confirmpassword.touched"style="color:red;">Confirm password is Invalid</span></td>
+         
+         
+        </div>
+      </tr>
+      
+    </tbody>
+  </table>
+  <button (click)="customerRegistration()" class="btn btn-dark">Sign Up</button>
 </div>
+

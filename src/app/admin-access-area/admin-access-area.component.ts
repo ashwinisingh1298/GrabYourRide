@@ -18,7 +18,7 @@ export class AdminAccessAreaComponent implements OnInit {
     this.adminService.viewAllPayments().subscribe(
       (resp)=>{
         for(let i=0;i<resp.length;i++){
-          if(resp[i].booking!=null){
+          if(resp[i].booking!=null && resp[i].paymentStatus=="Successful"){
           this.totalRevenue+=resp[i].booking.totalCost;
           }
         }
