@@ -11,20 +11,27 @@ import { UserServiceService } from '../service/user-service.service';
 export class NewUserComponent implements OnInit {
   user:User=new User();
   constructor(private router:Router,private userService:UserServiceService) { }
-
+  Invalid:string="";
   ngOnInit() {
   }
 
-  public customerRegistration(){
+  public customerRegistration() {
     console.log(this.user.userId + this.user.password);
     this.userService.addNewUser(this.user).subscribe(
-      (resp)=>{
-      console.log(resp);
-    });
+      (resp) => {
+        console.log(resp);
+        sessionStorage.setItem('email', this.user.userId);
+        this.router.navigate(['register', this.user.userId]);
+      }, error => {
+        this.Invalid = "User already exists, please login!";
+        console.log(error);
+      });
     console.log('user saved');
     // this.router.navigate(['newBooking',perkm,charges,type]);
-    sessionStorage.setItem('email',this.user.userId);
-    this.router.navigate(['register',this.user.userId]);
+  }
+
+  goToLogin(){
+    this.router.navigate(['loginPage']);
   }
 
 }
