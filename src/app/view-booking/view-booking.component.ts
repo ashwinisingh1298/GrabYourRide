@@ -11,7 +11,7 @@ import { UserData } from '../UserData/userData';
   styleUrls: ['./view-booking.component.css']
 })
 export class ViewBookingComponent implements OnInit {
-
+errormsg:string="";
   constructor(private viewBookingService:ViewBookingServiceService,private router : Router) { }
 bookingList = null;
 customer : Customer=new Customer();
@@ -20,6 +20,9 @@ customer : Customer=new Customer();
       (resp)=>{
         console.log(resp);
         this.bookingList=resp;
+      }
+      ,(err)=>{
+        this.errormsg="No Bookings Completed By You!";
       }
     );
   }

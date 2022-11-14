@@ -25,6 +25,7 @@ export class NewBookingComponent implements OnInit {
   noOfDays:number=0;
   Cost : number=0;
   date : String = null;
+  errorMsg:string="";
 
   ngOnInit() {
     this.date=new Date().toLocaleDateString(); 
@@ -83,6 +84,9 @@ export class NewBookingComponent implements OnInit {
         console.log(resp);
         console.log(resp.bookingId);
         this.router.navigate(['payment',this.Cost,resp.bookingId]);
+      },
+      (err)=>{
+          this.errorMsg="Invalid Booking Details, kindly check again!";
       }
     )
     

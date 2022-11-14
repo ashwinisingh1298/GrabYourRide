@@ -40,3 +40,16 @@ button{
     margin: auto;
     color: azure;
 }
+
+form{
+    background-color: #EEEEEE;
+}
+.target{
+    background-color: #EEEEEE;
+}
+div{
+    background-attachment: #EEEEEE;
+}
+label{
+    background-color: #EEEEEE;
+}
