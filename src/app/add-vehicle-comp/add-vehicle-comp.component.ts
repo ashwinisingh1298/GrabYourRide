@@ -36,6 +36,10 @@ export class AddVehicleCompComponent implements OnInit {
           this.status="Vehicle with same number already exists";
           this.buttonStatus=true;
         }
+
+      },
+      (err)=>{
+        this.status="Null/duplicate values have been stored in DB.Contact Administrator!"
       }
     )
   }

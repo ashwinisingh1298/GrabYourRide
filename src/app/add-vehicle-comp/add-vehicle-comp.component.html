@@ -9,6 +9,12 @@
         <td>
           <form >
           <input name="vehicleNumber" type="text" [(ngModel)]="vehicle.vehicleNumber" aria-required="true">
+          <div>
+          <button class="btn btn-dark col-4 mr-5"  (click)="checkVehicleExists()" >Validate</button>
+          <div class="text-center">
+            <h4 style="color:red;">{{status}}</h4>
+          </div>
+          </div>
         </form>
         </td>
       </tr>
@@ -95,17 +101,15 @@
       </tbody>
   </table><br>
 
-  <div class="text-center">
-    <h2>{{status}}</h2>
-  </div>
+ 
 
-    <div class="buttondiv row">
-      <button class="btn btn-dark col-4 mr-5"  (click)="checkVehicleExists()" >Validate</button>
-      <button (click)="onSubmit()" class="btn btn-success col-4 mr-2" [disabled]="buttonStatus">Submit</button>
-    </div>
+    <div class="buttondiv row" style="width:20%;margin: auto;" >
+      <button (click)="onSubmit()" class="btn btn-success mr-2" [disabled]="buttonStatus">Submit</button>
+    </div><br>
 
     <div class="text-center">
       <button class="btn btn-primary" (click)="back()">Go Back</button>
     </div>
+  
   
   
